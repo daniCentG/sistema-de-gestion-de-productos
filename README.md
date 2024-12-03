@@ -37,7 +37,7 @@ Esta aplicación web cumple con su propósito, que es ayudar a gesionar mercader
 ## 1. Clona este repositorio:
 
 ```bash
-git clone https://github.com/daniCentG/sistema-de-gestion-productos.git
+git https://github.com/daniCentG/sistema-de-gestion-de-productos.git
 
 cd tu-proyecto (cambia el directorio y ponle el nombre que quieras al proyecto)
 ```
