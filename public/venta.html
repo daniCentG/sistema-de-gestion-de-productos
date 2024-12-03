@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Ventas - Sistema de Control de Stock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>-Registrar Venta-</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="venta.html">Registrar Venta</a></li>
+                <li><a href="compra.html">Registrar Compra</a></li>
+                <li><a href="stock.html">Ver Stock</a></li>
+                <li><a href="resumen.html">Resumen</a></li>
+            </ul>
+            <a class="logout-button" href="#">Cerrar Sesión</a>
+        </nav>
+        
+        <form id="ventaForm">
+            <label for="producto">Producto:</label>
+            <select id="producto" required>
+                <option value="">Selecciona un producto</option>
+                <!-- Opciones se llenarán dinámicamente -->
+            </select>
+
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" required>
+
+            <label for="unidad-venta">Unidad de Venta:</label>
+            <select id="unidad-venta" name="unidad-venta" required>
+                <option value="kg">Kilogramos</option>
+                <option value="unidad">Unidades</option>
+            </select>
+
+            <label for="precio">Precio de Venta (Gs.):</label>
+            <input type="number" id="precio" required>
+
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente" required>
+
+            <!-- Campo de fecha -->
+            <label for="fecha">Fecha de Venta:</label>
+            <input type="date" id="fecha" required>
+
+            <label for="total">TOTAL (Gs.):</label>
+            <input type="number" id="total" required>
+
+            <button type="submit">Registrar Venta</button>
+        </form>
+        <!-- Mensaje para la venta -->
+        <div id="mensaje-venta"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+

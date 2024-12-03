@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Resumen de Compras y Ventas</title>
+</head>
+<body>
+    <div class="form-container-resumen">
+        <h1>-Resumen de Compras y Ventas-</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="venta.html">Registrar Venta</a></li>
+                <li><a href="compra.html">Registrar Compra</a></li>
+                <li><a href="stock.html">Ver Stock</a></li>
+                <li><a href="resumen.html">Resumen</a></li>
+            </ul>
+            <a class="logout-button" href="login.html">Cerrar Sesión</a>
+        </nav>
+   
+        <table id="resumen-table">
+            <thead>
+                <tr>
+                    <th>Fecha
+                        <div class="sort-container">
+                            <button class="sort-btn" data-col="fecha" data-order="asc">↑</button>
+                        </div>
+                    </th>
+                    <th>Tipo
+                        <div class="sort-container">                  
+                            <button class="sort-btn" data-col="tipo" data-order="asc">↑</button>
+                        </div>  
+                    </th>
+                    <th>Producto</th>
+                    <th>Cantidad - Kg/Unid.  
+                        <div class="sort-container"> 
+                            <button class="sort-btn" data-col="cantidad" data-order="asc">↑</button>
+                        </div>
+                    </th>
+                    <th>Total
+                        <div class="sort-container">
+                            <button class="sort-btn" data-col="total" data-order="asc">↑</button>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Los datos del resumen se cargarán aquí -->
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

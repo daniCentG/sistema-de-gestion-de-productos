@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Stock de Productos</title>
+</head>
+<body>
+    <div class="form-container-stock">
+        <h1>-Stock de Productos-</h1>
+        <nav class="navbar">
+            <ul>
+                <li><a href="venta.html">Registrar Venta</a></li>
+                <li><a href="compra.html">Registrar Compra</a></li>
+                <li><a href="stock.html">Ver Stock</a></li>
+                <li><a href="resumen.html">Resumen</a></li>
+            </ul>
+            <a class="logout-button" href="#">Cerrar Sesión</a>
+        </nav>
+    
+        <div class="content-container">
+            <table id="stock-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre del Producto</th>
+                        <th>Stock Actual</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los productos se cargarán aquí -->
+                </tbody>
+            </table>
+
+            <div id="alertas-stock">
+                <h3>Alertas de Stock Bajo:</h3>
+                <ul id="lista-alertas"></ul>
+            </div>
+
+            <div id="orden-compra">
+                <h2>Generar Orden de Compra</h2>
+                <form id="form-orden-compra">
+                    <label for="producto-id">Seleccionar Producto:</label>
+                    <select id="producto-id" required>
+                        <option value="">Selecciona un producto</option>
+                        <!-- Opciones se llenarán dinámicamente -->
+                    </select>
+                   
+                    <label for="cantidad-necesaria">Cantidad Necesaria:</label>
+                    <input type="number" id="cantidad-necesaria" required>
+                    
+                    <button type="submit">Generar Orden</button>
+                </form>
+                <p id="resultado-orden"></p>
+                <!-- Mensaje para el stock -->
+                <div id="mensaje-stock"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</body>
+</html>
