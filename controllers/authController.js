@@ -33,7 +33,7 @@ exports.logout = (req, res) => {
         if (err) {
             return res.status(500).json({ message: 'Error al cerrar sesión' });
         }
-        res.clearCookie('connect.sid'); // Eliminamos cookie de sesión en el cliente
+        res.clearCookie('connect.sid'); // Eliminar cookie de sesión en el cliente
         res.json({ message: 'Sesión cerrada' });
     });
 };
