@@ -422,13 +422,21 @@ function manejarLogin() {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ usuario, contraseña })
         })
-
+        
         .then(response => {
-            // Si el servidor responde con un error, lanzamos un error para manejarlo
-            if (!response.ok) {
-                throw new Error('Acceso no autorizado, por favor verifica tus credenciales.');
+            // Manejar la respuesta en función del código de estado
+            if (response.status === 200) {
+                return response.json(); // Si el login es exitoso
+            } else if (response.status === 403) {
+                // Usuario o contraseña incorrectos
+                throw new Error('Usuario o contraseña incorrectos');
+            } else if (response.status === 429) {
+                // Límite de intentos alcanzado
+                throw new Error('Demasiados intentos de inicio de sesión. Inténtalo en 15 minutos.');
+            } else {
+                // Otros errores
+                throw new Error('Error en el servidor. Inténtalo más tarde.');
             }
-            return response.json();
         })
 
         .then(data => {
