@@ -3,6 +3,10 @@
 Este proyecto es un sistema de control de stock diseñado específicamente para una heladería. Lo he desarrollado completamente desde cero para ofrecer una solución personalizada, segura y eficiente, pero puede ser adaptado a cualquier tipo de negocio que requiera registrar productos, gestionar inventarios, emitir alertas, realizar ventas y compras, y generar reportes detallados. Todo el código fuente que estoy compartiendo aquí es la base que puede ser pulida pero es totalmente funcional. Ya queda a disposición de usted maestro Jedi pulirlo como le apetezca, claro está😊.
 Esta aplicación web cumple con su propósito, que es ayudar a gesionar mercaderías de manera eficiente.
 
+Aquí tiene una muestra del front-end del sistema: https://danicentg.github.io/OnlyFrontEnd-Sistema-de-gestion-de-productos/
+
+La parte del back-end está integrada en el repo. Sigue leyendo más abajo para poder clonar y usarlo.
+
 > [!NOTE]
 >
 > LUEGO DE LEER ESTA PARTE:
