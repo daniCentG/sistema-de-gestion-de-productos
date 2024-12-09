@@ -429,7 +429,7 @@ function manejarLogin() {
                 return response.json(); // Si el login es exitoso
             } else if (response.status === 403) {
                 // Usuario o contraseña incorrectos
-                throw new Error('Usuario o contraseña incorrectos');
+                throw new Error('Usuario o contraseña incorrecto');
             } else if (response.status === 429) {
                 // Límite de intentos alcanzado
                 throw new Error('Demasiados intentos de inicio de sesión. Inténtalo en 15 minutos.');

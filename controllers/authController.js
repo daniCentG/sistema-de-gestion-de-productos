@@ -8,13 +8,13 @@ exports.login = async (req, res) => {
         // Buscar usuario en la base de datos
         const user = await Usuario.encontrarPorUsuario(usuario);
         if (!user) {
-            return res.status(403).json({ message: 'Usuario o contraseña incorrectos' });
+            return res.status(403).json({ message: 'Usuario o contraseña incorrecto' });
         }
 
         // Comparar contraseña ingresada con la almacenada
         const match = await bcrypt.compare(contraseña, user.contraseña);
         if (!match) {
-            return res.status(403).json({ message: 'Usuario o contraseña incorrectos' });
+            return res.status(403).json({ message: 'Usuario o contraseña incorrecto' });
         }
 
         // Establecer sesión y autenticación
