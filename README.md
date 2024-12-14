@@ -161,6 +161,4 @@ Los triggers aseguran la consistencia del stock y resumen sin intervención manu
 - Eficiencia en Consultas: Todas las consultas a la base de datos están optimizadas para minimizar tiempos de respuesta.
 
 
-Espero les guste. Y recuerda: Que la fuerza te acompañe!. 🚀⭐
-
-Estaré actualizando ...
+🚀⭐
