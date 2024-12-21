@@ -298,10 +298,6 @@ function generarOrdenCompra() {
     formOrdenCompra.addEventListener('submit', function (event) {
         event.preventDefault();
 
-
-        console.log('Formulario enviado. Preparando datos...'); // Log para confirmar si hace el envío correctamente
-
-
         const producto_id = formOrdenCompra.querySelector('#producto-id').value;
         const cantidad_necesaria = parseFloat(formOrdenCompra.querySelector('#cantidad-necesaria').value);
 
