@@ -23,4 +23,3 @@ exports.getResumen = async (req, res) => {
         res.status(500).json({ error: 'Error al obtener resumen' });
     }
 };
-

@@ -22,34 +22,40 @@
         </nav>
         
         <form id="ventaForm">
-            <label for="producto">Producto:</label>
-            <select id="producto" required>
-                <option value="">Selecciona un producto</option>
-                <!-- Opciones se llenarán dinámicamente -->
-            </select>
-
-            <label for="cantidad">Cantidad:</label>
-            <input type="number" id="cantidad" required>
-
-            <label for="unidad-venta">Unidad de Venta:</label>
-            <select id="unidad-venta" name="unidad-venta" required>
-                <option value="kg">Kilogramos</option>
-                <option value="unidad">Unidades</option>
-            </select>
-
-            <label for="precio">Precio de Venta (Gs.):</label>
-            <input type="number" id="precio" required>
-
-            <label for="cliente">Cliente:</label>
-            <input type="text" id="cliente" required>
-
-            <!-- Campo de fecha -->
-            <label for="fecha">Fecha de Venta:</label>
-            <input type="date" id="fecha" required>
-
-            <label for="total">TOTAL (Gs.):</label>
-            <input type="number" id="total" required>
-
+            <div class="form-group">
+                <label for="producto">Producto:</label>
+                <select id="producto" required>
+                    <option value="">Selecciona un producto</option>
+                    <!-- Opciones se llenarán dinámicamente -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="cantidad">Cantidad:</label>
+                <input type="number" id="cantidad" required>
+            </div>
+            <div class="form-group">
+                <label for="unidad-venta">Unidad de Venta:</label>
+                <select id="unidad-venta" name="unidad-venta" required>
+                    <option value="kg">Kilogramos</option>
+                    <option value="unidad">Unidades</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="precio">Precio de Venta (Gs.):</label>
+                <input type="number" id="precio" required>
+            </div>
+            <div class="form-group">
+                <label for="cliente">Cliente:</label>
+                <input type="text" id="cliente" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha">Fecha de Venta:</label>
+                <input type="date" id="fecha" required>
+            </div>
+            <div class="form-group">
+                <label for="total">TOTAL (Gs.):</label>
+                <input type="number" id="total" required>
+            </div>
             <button type="submit">Registrar Venta</button>
         </form>
         <!-- Mensaje para la venta -->
@@ -59,6 +65,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
-

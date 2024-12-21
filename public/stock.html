@@ -19,50 +19,48 @@
             </ul>
             <a class="logout-button" href="#">Cerrar Sesión</a>
         </nav>
-    
         <div class="content-container">
-            <table id="stock-table">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre del Producto</th>
-                        <th>Stock Actual</th>
-                        <th>Precio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Los productos se cargarán aquí -->
-                </tbody>
-            </table>
-
+            <div class="table-container">
+                <table id="stock-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre del Producto</th>
+                            <th>Stock Actual</th>
+                            <th>Precio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Los productos se cargarán aquí -->
+                    </tbody>
+                </table>
+            </div>
             <div id="alertas-stock">
                 <h3>Alertas de Stock Bajo:</h3>
                 <ul id="lista-alertas"></ul>
             </div>
-
             <div id="orden-compra">
                 <h2>Generar Orden de Compra</h2>
                 <form id="form-orden-compra">
-                    <label for="producto-id">Seleccionar Producto:</label>
-                    <select id="producto-id" required>
-                        <option value="">Selecciona un producto</option>
-                        <!-- Opciones se llenarán dinámicamente -->
-                    </select>
-                   
-                    <label for="cantidad-necesaria">Cantidad Necesaria:</label>
-                    <input type="number" id="cantidad-necesaria" required>
-                    
+                    <div class="form-group">
+                        <label for="producto-id">Seleccionar Producto:</label>
+                        <select id="producto-id" required>
+                            <option value="">Selecciona un producto</option>
+                            <!-- Opciones se llenarán dinámicamente -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad-necesaria">Cantidad Necesaria:</label>
+                        <input type="number" id="cantidad-necesaria" required>
+                    </div>
                     <button type="submit">Generar Orden</button>
                 </form>
                 <p id="resultado-orden"></p>
-                <!-- Mensaje para el stock -->
                 <div id="mensaje-stock"></div>
             </div>
         </div>
     </div>
-
     <script src="script.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </body>
 </html>

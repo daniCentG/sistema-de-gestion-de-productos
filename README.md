@@ -22,7 +22,7 @@ La parte del back-end está integrada en el repo. Sigue leyendo más abajo para 
 - **MENÚ de Gestión de Inventario**: Desde un Menú principal Agrega, Actualiza, Monitorea productos con alertas de stock bajo, Ordena de menor a mayor el Resumen de Compras y Ventas.
 - **Registro de Compras y Ventas**: Registro de transacciones con validación en tiempo real.
 - **Generación de Órdenes de Compra**: Crea órdenes de compra en PDF para mantener un seguimiento claro (le puedes dar el formato que más te guste en el PDF que genera el sistema).
-- **Reportes Detallados**: Resumen de transacciones (ventas y compras) ordenados cronológicamente.
+- **Reportes Detallados**: Resumen de transacciones (ventas y compras) ordenados cronológicamente y un total general para cada compra y venta en el resumen.
 - **Interfaz Adaptativa**: Compatible con dispositivos de diferentes tamaños.
 
 ---
@@ -119,13 +119,13 @@ Esto agregará al usuario con su contraseña hasheada a la base de datos mediant
 
 2. COMO MENCIONÉ, LA OTRA MANERA ES A TRAVÉS DE SENTENCIA SQL APUNTANDO AL NOMBRE DE TU TABLA QUE CONTENDRÁN LAS CREDENCIALES: EJEMPLO: *INSERT INTO mi_tabla (id, user, pass) VALUES (1, 'jedi', 'quelafuerzateacompañe');*. OJO: La diferencia con el otro método es que no cifra la contraseña, pero si tiene métodos básicos de sanitización ante cualquier SQL-injection. Lo debes verificar si usas este paso 2.
 
-Luego de hacer todo el paso 1 o 2 (Recomendado el 1) puedes acceder al sistema de manera local:  http://localhost:3000/login.html   ó  http://localhost:3000
+Luego de hacer todo el paso 1 o 2 (Recomendado el 1) puedes acceder al sistema de manera local:  http://localhost:3000/login.html
 
 ![imagen](imagesMuestra/image-1.png)
 
 Una vez logueadas con las credenciales se accede al Menú. Ya puedes navegar en las diferentes secciones haciendo Clic en cada una de ellas:
 
-![imagen](imagesMuestra/image-2.png)
+![imagen](imagesMuestra/img2.jpg)
 
 > [!IMPORTANT]
 > Para registar productos se debe hacer desde el MENÚ --- > Registar Compra. Entonces cuando cargamos los productos se puede Registar Venta y demás. Luego ya no hace falta poner el nombre del producto para vender porque se enlaza dinámicamente desde los productos registrados que hay disponible en stock.
@@ -133,13 +133,13 @@ Una vez logueadas con las credenciales se accede al Menú. Ya puedes navegar en 
 
 **Muestras visuales:**
 
-![img](imagesMuestra/image-3.png)
+![img](imagesMuestra/img3.jpg)
 
-![img](imagesMuestra/image-4.png)
+![img](imagesMuestra/img4.jpg)
 
-![img](imagesMuestra/image-5.png)
+![img](imagesMuestra/img5.jpg)
 
-![img](imagesMuestra/image-6.png)
+![img](imagesMuestra/img6.jpg)
 
 **Detalles Técnicos Adicionales**
 

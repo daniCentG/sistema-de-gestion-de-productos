@@ -1,6 +1,3 @@
-```SQL
---COPIA ESTO EN UNA QUERY TOOL:
-
 -- Tabla de Usuarios
 CREATE TABLE IF NOT EXISTS usuarios (
     id SERIAL PRIMARY KEY,
@@ -91,6 +88,13 @@ BEGIN
         UPDATE productos 
         SET stock_actual = stock_actual + NEW.cantidad 
         WHERE id = NEW.producto_id;
+        
+        -- Actualizar el precio de compra si es diferente
+        IF (SELECT precio FROM productos WHERE id = NEW.producto_id) <> NEW.precio_total / NEW.cantidad THEN
+            UPDATE productos 
+            SET precio = NEW.precio_total / NEW.cantidad 
+            WHERE id = NEW.producto_id;
+        END IF;
     ELSIF (TG_OP = 'INSERT' AND TG_TABLE_NAME = 'ventas') THEN
         UPDATE productos 
         SET stock_actual = stock_actual - NEW.cantidad 

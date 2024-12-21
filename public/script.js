@@ -370,6 +370,7 @@ function cargarResumen() {
         .then(data => {
             resumenData = data; // Guardar los datos cargados
             renderResumen(resumenData); // Mostrar los datos en la tabla
+            calcularTotales(resumenData); // Calcular y mostrar los totales
         })
         .catch(error => console.error('Error cargando el resumen:', error));
 }
@@ -393,17 +394,56 @@ function renderResumen(data) {
     });
 }
 
+// Función para calcular y mostrar los totales de ventas y compras
+function calcularTotales(data) {
+    let totalVentas = 0;
+    let totalCompras = 0;
+
+    data.forEach(item => {
+        if (item.tipo === 'venta') {
+            totalVentas += parseFloat(item.precio_total);
+        } else if (item.tipo === 'compra') {
+            totalCompras += parseFloat(item.precio_total);
+        }
+    });
+
+    document.getElementById('total-ventas').textContent = `Gs. ${totalVentas.toLocaleString('es-ES')}`;
+    document.getElementById('total-compras').textContent = `Gs. ${totalCompras.toLocaleString('es-ES')}`;
+}
+
 // Función para manejar el ordenamiento
 function ordenarResumen(columna, orden) {
     resumenData.sort((a, b) => {
+        let aValue = a[columna];
+        let bValue = b[columna];
+
+        // Convertir fechas a objetos Date para comparación
+        if (columna === 'fecha') {
+            aValue = new Date(aValue);
+            bValue = new Date(bValue);
+        }
+
+        // Convertir cantidad y precio_total a números para comparación
+        if (columna === 'cantidad' || columna === 'precio_total') {
+            aValue = parseFloat(aValue);
+            bValue = parseFloat(bValue);
+        }
+
+        // Convertir tipo a valores comparables
+        if (columna === 'tipo') {
+            aValue = aValue === 'venta' ? 1 : 2;
+            bValue = bValue === 'venta' ? 1 : 2;
+        }
+
         if (orden === 'asc') {
-            return a[columna] > b[columna] ? 1 : -1;
+            return aValue > bValue ? 1 : -1;
         } else {
-            return a[columna] < b[columna] ? 1 : -1;
+            return aValue < bValue ? -1 : 1;
         }
     });
 
     renderResumen(resumenData);
+    calcularTotales(resumenData); // Recalcular los totales después de ordenar
 }
 
 // Función para manejar el login

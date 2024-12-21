@@ -19,36 +19,49 @@
             </ul>
             <a class="logout-button" href="login.html">Cerrar Sesión</a>
         </nav>
-   
-        <table id="resumen-table">
-            <thead>
-                <tr>
-                    <th>Fecha
-                        <div class="sort-container">
-                            <button class="sort-btn" data-col="fecha" data-order="asc">↑</button>
-                        </div>
-                    </th>
-                    <th>Tipo
-                        <div class="sort-container">                  
-                            <button class="sort-btn" data-col="tipo" data-order="asc">↑</button>
-                        </div>  
-                    </th>
-                    <th>Producto</th>
-                    <th>Cantidad - Kg/Unid.  
-                        <div class="sort-container"> 
-                            <button class="sort-btn" data-col="cantidad" data-order="asc">↑</button>
-                        </div>
-                    </th>
-                    <th>Total
-                        <div class="sort-container">
-                            <button class="sort-btn" data-col="total" data-order="asc">↑</button>
-                        </div>
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Los datos del resumen se cargarán aquí -->
-            </tbody>
+        <div class="table-container">
+            <table id="resumen-table">
+                <thead>
+                    <tr>
+                        <th>Fecha
+                            <div class="sort-container">
+                                <button class="sort-btn" data-col="fecha" data-order="asc">↑</button>
+                            </div>
+                        </th>
+                        <th>Tipo
+                            <div class="sort-container">                  
+                                <button class="sort-btn" data-col="tipo" data-order="asc">↑</button>
+                            </div>  
+                        </th>
+                        <th>Producto</th>
+                        <th>Cantidad - Kg/Unid.  
+                            <div class="sort-container"> 
+                                <button class="sort-btn" data-col="cantidad" data-order="asc">↑</button>
+                            </div>
+                        </th>
+                        <th>Total
+                            <div class="sort-container">
+                                <button class="sort-btn" data-col="precio_total" data-order="asc">↑</button>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Los datos del resumen se cargarán aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="totals-container">
+        <table>
+            <tr>
+                <td>Total Ventas:</td>
+                <td id="total-ventas">Gs. 0.00</td>
+            </tr>
+            <tr>
+                <td>Total Compras:</td>
+                <td id="total-compras">Gs. 0.00</td>
+            </tr>
         </table>
     </div>
     <script src="script.js"></script>

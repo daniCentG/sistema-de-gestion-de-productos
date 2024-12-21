@@ -1,586 +1,560 @@
 /* Estilos Generales */
 body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffffa2 !important;
-
-  /*background fondo de imagen*/
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6),
-      rgba(55, 55, 55, 0.6)), url(images/img-login-2.png);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  object-fit: cover;
-}
-
-/* Navegación */
-.navbar {
-  background-color: #1f7f67;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  color: #c6c6c6e3;
-  border-radius: 8px;
-}
-
-.navbar ul {
-  list-style: none;
-  padding: 0px;
-  margin: 0px;
-  display: flex;
-  justify-content: space-between;/* Espaciado uniforme entre los enlaces */
-  align-items: center;/* Centra verticalmente los elementos */
-}
-
-.navbar ul li {
-  flex: 1;/* Cada elemento ocupará el mismo espacio */
-}
-
-.navbar ul li a {
-  display: block;
-  padding: 10px; /* Ajustar padding para tamaño uniforme */
-  color: #fcfcfc;
-  font-weight: bold;
-  text-decoration: none;
-  text-align: center;/* Centrar el texto */
-  border-radius: 4px;/* Bordes redondeados */
-  transition: background-color 0.3s, color 0.3s;/* Transición suave */
-}
-
-/* Efecto Hover */
-.navbar ul li a:hover {
-  background-color: #135542;/* Color de fondo más oscuro al pasar el mouse */
-  color: #000000;/* Color del texto al pasar el mouse */
-  border-radius: 5px;
-}
-
-/* Contenedores */
-.form-container {
-  border: 1px solid #ffffff;
-  width: 50rem;/* Mayor ancho para formularios */
-  margin: 0px auto;/* Centrar contenedores */
-  padding: 35px;/* Espacio dentro del contenedor */
-  background: linear-gradient(95deg, #fafafa74 0%, #18181839 100%);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.975);/* Sombra más pronunciada */
-  display: flex;/* Usar flexbox para asegurar tamaño uniforme */
-  flex-direction: column;/* Organizar los elementos en columna */
-  font-size: larger;
-}
-
-/*estilo aplicado solo a los contenedor del los fromulario stock y resumen-----------------------------*/
-.form-container-stock,
-.form-container-resumen {
-  max-width: 90rem;/* Mayor ancho para formularios */
-  margin: 0px auto;/* Centrar contenedores */
-  padding: 30px;/* Espacio dentro del contenedor */
-  background: linear-gradient(95deg, #fafafa74 0%, #dfdfdf39 100%);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.148);/* Sombra más pronunciada */
-  display: flex;/* Usar flexbox para asegurar tamaño uniforme */
-  flex-direction: column;/* Organizar los elementos en columna */
-  font-size: larger;
-  border: 1px solid #ffffff;
-}
-
-/* Botón de Cerrar Sesión en toda la página*/
-.logout-button {
-  position: absolute;/* Posición absoluta para colocar el botón donde queramos */
-  top: 5px;/* Distancia desde la parte superior de la pantalla */
-  right: 30px;
-  background-color: #3d76c5e8;/* Rojo para cerrar sesión */
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 4px;
-  font: 10px / 33px D-DIN-Bold, Verdana, sans-serif;
-  text-transform: uppercase;
-  width: 7rem;
-  text-align: center;
-  border: 1px solid rgba(27, 35, 36, 0.697) !important;
-}
-
-/* Efecto Hover para el botón de Cerrar Sesión */
-.logout-button:hover {
-  background-color: rgb(26, 70, 157); /* Color más oscuro en hover */
-  transform: scale(1.05);/* Efecto de agrandamiento */
-}
-
-/* Contenedor específico para Login */
-.login-container {
-  width: 100%;
-  max-width: 350px;/* Ancho específico para el login */
-  border-radius: 15px;
-  margin: 50px auto;/* Centrado vertical y horizontal */
-  padding: 20px;/* Espacio dentro del contenedor */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.832);
-  background: linear-gradient(95deg, #2e292b4b 0%, #035b4639 100%);
-}
-
-.login-container h2 {
-  color: #ffffff !important;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* form control específico para Login */
-.form-control {
-  font-size: 20px !important;/*input usuario y contraseña*/
-  font-family: 'Courier New', Courier, monospace;
-  font-style: italic;
-  background-color: #ffffff4b !important;
-  color: #010101 !important;
-  transition: border-color 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.697) !important;
-}
-
-/* ícono específico para Login */
-.icon {
-  position: absolute;
-  top: 50%;
-  right: 5px;
-  transform: translateY(-50%);
-  background: linear-gradient(135deg, #42f5c2, #56a4f2);
-  padding: 12px;
-  border-radius: 50%;
-}
-
-.btn-primary {
-  font-size: larger !important;
-  background-color: #125f99aa !important;
-  border: 1px solid rgba(255, 255, 255, 0.433) !important;
-  transition: background-color 0.3s ease;
-  color: #ffffff;
-  box-shadow: 0 15px 32px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s !important;
-}
-
-.btn-primary:hover {
-  background-color: #104651 !important;
-}
-
-/* Animación para los íconos del login */
-.form-control:focus+.icon:hover {
-  animation: iconMove 0.5s forwards;
-}
-
-@keyframes iconMove {
-  0% {
-    transform: translateY(-50%) scale(1);
-  }
-
-  50% {
-    transform: translateY(-50%) scale(1.2);/* Agrandamos ligeramente el icono */
-  }
-
-  100% {
-    transform: translateY(-50%) scale(1);/* Volvemos al tamaño original */
-  }
-}
-
-/* Otra animación adicional para rotar el icono del login*/
-.form-control:focus+.icon {
-  animation: iconRotate 0.5s forwards;
-}
-
-@keyframes iconRotate {
-  from {
-    transform: translateY(-50%) rotate(0deg);
-  }
-
-  to {
-    transform: translateY(-50%) rotate(360deg);/* Giramos el icono completamente */
-  }
-}
-
-/* Títulos */
-/*h1 en los formularios venta,stock,compra,index,resumen*/
-h1 {
-  letter-spacing: 4px;
-  font-size: 30px !important;
-  text-transform: uppercase;
-  margin-top: -1rem;
-  color: rgb(189, 189, 189);
-  text-align: center;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-/*h2 en los formularios login,stock,*/
-h2 {
-  color: rgb(0, 0, 0) !important;
-  font-family: 'Courier New', Courier, monospace;
-  text-align: center;
-  padding: 5px;
-}
-
-/*h3 en el form stock de "Alertas de Stock Bajo en stock.html"*/
-h3 {
-  color: rgb(255, 255, 255);
-}
-
-/* Formularios */
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  margin: 10px 2px 25px;
-  color: 2px bold black;
-}
-
-/*-------Select de todo el formulario---------------*/
-select {
-  width: 20rem;
-  padding: 5px;
-  border-radius: 0.3rem;
-  margin-left: 220px;
-  margin-top: -50px;
-  border: 2px solid #000000;
-}
-
-/*tamaño de los input venta y compra*/
-.form-container input {
-  border-radius: 5px;
-  width: 25rem;
-  padding: 12px;
-  margin-left: 220px;
-  margin-top: -50px;
-  border: 2px solid #000000;
-}
-
-/*tamaño de los input de stock*/
-.form-container-stock input {
-  width: 10rem;
-  padding: 10px;
-  margin-left: 220px;
-  margin-top: -50px;
-}
-
-/* Botones de los formularios*/
-button {
-  padding: 12px;
-  background-color: #2e5fbbea !important;/* Color verde vibrante */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 17px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-button:hover {
-  background-color: #2b4690 !important;
-}
-
-/* Tablas */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 20px 0;
-}
-
-table, th, td {
-  border: 1px solid #ddd;
-}
-
-th, td {
-  padding: 12px;
-  text-align: left;
-}
-
-th {
-  position: relative; /* Permite posicionar elementos dentro del encabezado */
-  text-align: left; /* Mantiene el texto alineado a la izquierda */
-  padding-right: 30px; /* Espacio para el botón */
-  background-color: #1f4c79;/* Color verde para el encabezado */
-  color: white;
-}
-
-/*Header del menú principal index.html*/
-header h1 {
-  margin: 0px auto;/* Centrar contenedores */
-  padding: 30px;/* Espacio dentro del contenedor */
-  background: linear-gradient(135deg, #484848, #5a5a5a8d);
-}
-
-/* Contenedor del menú */
-.menu-container {
-  border: 1px solid rgba(237, 237, 237, 0.948);
-  max-width: fit-content;
-  margin: 20px auto;/* Centrar contenedores */
-  padding: 50px;/* Espacio dentro del contenedor */
-  background: -webkit-linear-gradient(90deg, #012d07,#015521,#012d07);
-  background: linear-gradient(90deg, #012d07,#015521,#012d07);
-  border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(36, 36, 36, 0.996);/* Sombra más pronunciada */
-  display: flex;/* Usar flexbox para asegurar tamaño uniforme */
-  flex-direction: column;/* Organizar los elementos en columna */
-  font-size: larger;
-  padding-top: 20px;
-}
-
-p{
-  color: #ffffff;
-  font-size: 35px;
-  text-align: center;
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  text-transform: uppercase; /* Texto en mayúsculas */
-  letter-spacing: 0.15em; /* Espaciado entre letras */
-}
-
-/* Botones del menú */
-.menu-btn {
-  background-color: #1f7f67;
-  color: #ffffff;
-  padding: 15px 30px;
-  margin: 10px 0px;
-  border-radius: 5px;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  width: 250px;
-  font-size: 1.2rem;
-  border: 1px solid #fcfcfc;
-}
-
-.menu-btn:hover {
-  background-color: rgb(14, 71, 43);
-  transform: scale(1.05);
-}
-
-.menu-btn:active {
-  transform: scale(1);
-}
-
-/* Contenedor de los botones de ordenamiento */
-.sort-container {
-  position: absolute;
-  right: 10px; /* Ajusta la posición del botón */
-  top: 30%; /* Centra verticalmente */
-  transform: translateY(-50%); /* Corrige el centrado */
-  display: flex;
-  gap: 5px; /* Espacio entre botones */
-}
-/* Botones de ordenamiento */
-.sort-btn {
-  background-color: #54777ef0 !important; /* Color principal del botón */
-  color: #ffffff; /* Color del texto */
-  border: none;
-  padding: 5px 8px;
-  border-radius: 4px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-.sort-btn:hover {
-  color: #000000; /* Cambia el color al pasar el ratón */
-  background-color: #2f9b9b !important;
-}
-.sort-btn:active {
-  background-color: #5d6068; /* Color aún más oscuro al hacer clic */
-  transform: scale(0.95); /* Efecto de reducción al hacer clic */
-}
-
-
-/* Responsividad */
-
-@media (max-width: 1160px){
-  .logout-button{
-    right: 150px;
-  }
-}
-
-@media (max-width: 1028px){
-  .logout-button{
-    right: 80px;
-  }
-}
-
-@media (max-width: 920px){
-  .logout-button{
-    right: 70px;
-  }
-
-  h1{
-    font-size: 1rem;
-  }
-}
-@media (max-width: 872px){
-  .logout-button{
-    right: 60px;
-  }
-  h1{
-    font-size: 1.5rem !important;
-  }
-}
-
-
-@media (max-width: 800px) {
-  a{
-    font-size: 15px;
-  }
-
-  h1 {
-    font-size: 1rem;
-  }
-
-  .form-container{
-    max-width: 80%;
-  }
-
-  select, input {
-    max-width: 20rem;
-  }
-
-  .logout-button {
-    right: 45px;
-    width: 6rem;
-  }
-
-  .login-container input {
-    max-width: 100%;
-  }
-}
-
-@media (max-width: 700px) {
-
-  select, input {
-    max-width: 10rem;
-  }
-
-  .logout-button {
-    right: 35px;
-  }
-
-  th {
-    padding: 10px;
-    width: 20%;
-    font-size: 10px;
-  }
-
-  h1{
-    font-size: 1.3rem !important;
-  }
-
-}
-
-@media (max-width: 648px){
-  .logout-button{
-    right: 30px;
-  }
-}
-
-@media (max-width: 615px){
-  .logout-button{
-    right: 25px;
-    font-size: 8px;
-  }
-}
-
-@media (max-width: 600px) {
-
-  .navbar ul {
-    flex-direction: column;
-  }
-
-  .login-container input {
-    max-width: 100%;
-  }
-  .menu-container,
-  .login-container {
-    max-width: 50%;
-  }
-
-  h1 {
-    font-size: 1.2rem !important;
-  }
-
-  .menu-btn {
-    width: 80%;
-  }
-
-  .logout-button {
-    right: 25px;
-    font-size: 8px;
-    width: 5rem;
-  }
-
-}
-@media (max-width: 576px){
-  .logout-button{
-    right: 20px;
-  }
-}
-
-@media (max-width: 555px){
-  h1{
-    font-size: 1.1rem !important;
-  }
-}
-
-@media (max-width: 533px){
-  h1{
-    font-size: 1rem !important;
-  }
-}
-
-@media (max-width: 508px){
-  h1{
-  margin-right: 15px !important;
-  }
-}
-
-@media (max-width: 500px){
-
-  select, input{
-    max-width: 8rem;
-  }
-
-  .logout-button {
-    right: 15px;
-  }
-
-  th {
-    padding: 10px;
-    width: 20%;
-    font-size: 10px;
-  }
-
-  h1{
-    font-size: 1rem !important;
-  }
-
-}
-
-@media (max-width: 480px) {
-
-  .menu-btn {
-    width: 180px;/* Ajusta el ancho de los botones en pantallas muy pequeñas */
-    padding: 12px;/* Reduce el padding de los botones */
-    font-size: 14px;/* Reduce el tamaño de la fuente */
-  }
-
-  .menu-container {
-    padding: 20px;/* Ajusta el padding del contenedor */
-  }
-
-  .form-container input{
-    margin-left: 150px !important;
-  }
-
-  .form-container label{
-    width: 50%;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffffa2 !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(55, 55, 55, 0.6)), url(images/img-login-2.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
   }
   
-  select{
-    margin-left: 150px !important;    
+  /* Navegación */
+  .navbar {
+    background-color: #1f7f67;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    color: #c6c6c6e3;
+    border-radius: 8px;
+    margin-bottom: 20px; /* Añadir margen inferior para el espaciado */
   }
-
-  .content-container select{
-    margin-left: 190px !important;
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
-
-  .content-container input{
-    margin-left: 175px !important;
+  
+  .navbar ul li {
+    flex: 1;
   }
-}
+  
+  .navbar ul li a {
+    display: block;
+    padding: 10px;
+    color: #fcfcfc;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .navbar ul li a:hover {
+    background-color: #135542;
+    color: #000000;
+    border-radius: 5px;
+  }
+  
+  /* Contenedores */
+  .form-container,
+  .form-container-stock,
+  .form-container-resumen {
+    border: 1px solid #ffffff;
+    margin: 0 auto 20px auto; /* Añadir margen inferior para el espaciado */
+    padding: 35px;
+    background: linear-gradient(95deg, #fafafa74 0%, #18181839 100%);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.975);
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+    max-width: 80%;
+    overflow-x: auto; /* Añadir desplazamiento horizontal si el contenido desborda */
+  }
+  
+  .form-container-stock,
+  .form-container-resumen {
+    padding: 30px;
+    background: linear-gradient(95deg, #fafafa74 0%, #dfdfdf39 100%);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.148);
+  }
+  
+  @media (min-width: 1200px) {
+    .form-container-stock .table-container {
+      max-height: 200px; /* Ajustar altura según sea necesario para aproximadamente 5 filas */
+      overflow-y: auto;
+      overflow-x: auto; /* Añadir desplazamiento horizontal */
+    }
+  
+    .form-container-resumen .table-container {
+      max-height: 400px; /* Ajustar altura según sea necesario para aproximadamente 15 filas */
+      overflow-y: auto;
+      overflow-x: auto; /* Añadir desplazamiento horizontal */
+      margin-bottom: 20px; /* Añadir margen inferior para el espaciado */
+    }
+  }
+  
+  .totals-container {
+    margin-top: 20px; /* Añadir margen superior para el espaciado */
+    text-align: right; /* Alinear totales a la derecha */
+    font-size: 18px; /* Aumentar tamaño de fuente para mejor legibilidad */
+    font-weight: bold;
+    color: #47e8d5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .totals-container table {
+    width: 35%;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  
+  .totals-container td {
+    padding: 5px;
+    border: none;
+    font-weight: bold;
+  }
+  
+  /* Botón de Cerrar Sesión */
+  .logout-button {
+    position: absolute;
+    top: 5px;
+    right: 10px; /* Ajustar posición a la derecha */
+    background-color: #3d76c5e8;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font: 8px / 28px D-DIN-Bold, Verdana, sans-serif; /* Reducir tamaño de fuente y altura de línea */
+    text-transform: uppercase;
+    width: 6rem; /* Reducir ancho */
+    text-align: center;
+    border: 1px solid rgba(27, 35, 36, 0.697) !important;
+  }
+  
+  .logout-button:hover {
+    background-color: rgb(26, 70, 157);
+    transform: scale(1.05);
+  }
+  
+  /* Contenedor específico para Login */
+  .login-container {
+    width: 80%;
+    max-width: 350px;
+    border-radius: 15px;
+    margin: 50px auto;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.832);
+    background: linear-gradient(95deg, #2e292b4b 0%, #035b4639 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinear elementos al centro */
+  }
+  
+  .login-container h2 {
+    color: #ffffff !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center; /* Alinear texto al centro */
+    width: 100%; /* Asegurar ancho completo */
+  }
+  
+  /* Form control específico para Login */
+  .login-container .form-group {
+    width: 100%; /* Ancho completo */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinear elementos al inicio */
+  }
+  
+  .login-container label {
+    width: 100%; /* Ancho completo */
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .login-container .form-control {
+    font-size: 20px !important;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+    background-color: #ffffff4b !important;
+    color: #010101 !important;
+    transition: border-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.697) !important;
+    width: 100%; /* Ancho completo */
+    margin-bottom: 15px; /* Añadir margen inferior */
+  }
+  
+  /* Ícono específico para Login */
+  .icon {
+    position: absolute;
+    top: 40%;
+    right: 10px; /* Ajustar posición a la derecha */
+    transform: translateY(-50%);
+    background: linear-gradient(135deg, #42f5c2, #56a4f2);
+    padding: 12px;
+    border-radius: 50%;
+  }
+  
+  .btn-primary {
+    font-size: larger !important;
+    background-color: #125f99aa !important;
+    border: 1px solid rgba(255, 255, 255, 0.433) !important;
+    transition: background-color 0.3s ease;
+    color: #ffffff;
+    box-shadow: 0 15px 32px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s !important;
+  }
+  
+  .btn-primary:hover {
+    background-color: #104651 !important;
+  }
+  
+  /* Animación para los íconos del login */
+  .form-control:focus+.icon:hover {
+    animation: iconMove 0.5s forwards;
+  }
+  
+  @keyframes iconMove {
+    0% {
+      transform: translateY(-50%) scale(1);
+    }
+    50% {
+      transform: translateY(-50%) scale(1.2);
+    }
+    100% {
+      transform: translateY(-50%) scale(1);
+    }
+  }
+  
+  .form-control:focus+.icon {
+    animation: iconRotate 0.5s forwards;
+  }
+  
+  @keyframes iconRotate {
+    from {
+      transform: translateY(-50%) rotate(0deg);
+    }
+    to {
+      transform: translateY(-50%) rotate(360deg);
+    }
+  }
+  
+  /* Títulos */
+  h1 {
+    letter-spacing: 4px;
+    font-size: 30px !important;
+    text-transform: uppercase;
+    margin-top: -1rem;
+    color: rgb(189, 189, 189);
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  
+  h2 {
+    color: rgb(0, 0, 0) !important;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    padding: 5px;
+  }
+  
+  h3 {
+    color: rgb(255, 255, 255);
+  }
+  
+  /* Formularios */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  select, input[type="text"], input[type="number"], input[type="date"] {
+    width: 30%; /* Reducir aún más el ancho */
+    padding: 8px; /* Reducir padding */
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+  }
+  
+  input[type="date"] {
+    width: 20% !important; /* tamaño del input de la fecha */
+  }
+  
+  @media (min-width: 769px) {
+    .form-group {
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    label {
+      width: 30%;
+      margin-bottom: 0;
+      text-align: right;
+      padding-right: 10px;
+    }
+  
+    select, input[type="text"], input[type="number"], input[type="date"] {
+      width: 50%;
+      margin-bottom: 0;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    select, input[type="text"], input[type="number"], input[type="date"] {
+      width: 40%;
+    }
+  }
+  
+  /* Botones de los formularios */
+  button {
+    padding: 10px; /* Reducir padding */
+    background-color: #2e5fbbea !important;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px; /* Reducir tamaño de fuente */
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #2b4690 !important;
+  }
+  
+  /* Tablas */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    position: relative;
+    text-align: left;
+    padding-right: 30px;
+    background-color: #1f4c79;
+    color: white;
+  }
+  
+  .table-container {
+      max-height: 400px; /* Ajustar altura según sea necesario para aproximadamente 15 filas */
+      overflow-y: auto;
+      overflow-x: auto; /* Añadir desplazamiento horizontal */
+  }
+  
+  #resumen-table th, #resumen-table td {
+      box-sizing: border-box;
+      padding: 16px; /* Aumentar padding para mejores proporciones */
+      text-align: left;
+      font-size: 16px; /* Aumentar tamaño de fuente para mejor legibilidad */
+  }
+  
+  #resumen-table th {
+      position: sticky;
+      top: 0;
+      background-color: #1f4c79;
+      color: white;
+      font-size: 16px; /* Asegurar tamaño de fuente consistente */
+  }
+  
+  /* Header del menú principal */
+  header h1 {
+    margin: 0 auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #484848, #5a5a5a8d);
+  }
+  
+  /* Contenedor del menú */
+  .menu-container {
+    border: 1px solid #a4a4a4; /* Light border */
+    max-width: 500px; /* Set a fixed width for better distribution */
+    margin: 50px auto; /* Increase margin for better spacing */
+    padding: 50px; /* Adjust padding for a cleaner look */
+    background: linear-gradient(to bottom, #16411a, #8ecb72); /* Green gradient background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items */
+    font-size: larger;
+  }
+  
+  .menu-container p {
+    color: #ffffff; /* White text color */
+    font-size: 26px; /* Adjust font size */
+    text-align: center;
+    font-family: 'Tahoma', Geneva, Verdana, sans-serif; /* Modern font family */
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 25px; /* Add margin bottom for spacing */
+  }
+  
+  .menu-btn {
+    background-color: #1c542d; /* Green color */
+    color: #ffffff;
+    padding: 12px 25px;
+    margin: 10px 0;
+    border-radius: 6px; /* Rounded corners */
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 60%; /* Full width buttons */
+    font-size: 1rem; /* Adjust font size */
+    border: 1px solid rgb(27, 27, 27); /* Remove border */
+  }
+  
+  .menu-btn:hover {
+    background-color: #276954; /* Darker green on hover */
+    transform: scale(1.05); /* Scale on hover */
+  }
+  
+  .menu-btn:active {
+    transform: scale(1);
+  }
+  
+  /* Contenedor de los botones de ordenamiento */
+  .sort-container {
+    position: absolute;
+    right: 10px;
+    top: 30%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 5px;
+  }
+  
+  .sort-btn {
+    background-color: #54777ef0 !important;
+    color: #ffffff;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .sort-btn:hover {
+    color: #000000;
+    background-color: #2f9b9b !important;
+  }
+  
+  sort-btn:active {
+    background-color: #5d6068;
+    transform: scale(0.95);
+  }
+  
+  /* Responsividad */
+  @media (max-width: 1200px) {
+    .form-container,
+    .form-container-stock,
+    .form-container-resumen {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .form-container,
+    .form-container-stock,
+    .form-container-resumen {
+      max-width: 100%;
+    }
+    a{
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .form-container,
+    .form-container-stock,
+    .form-container-resumen {
+      max-width: 90%;
+    }
+    .form-group {
+      flex-direction: column; /* Change to column for better stacking on small screens */
+      align-items: flex-start; /* Align items to the start */
+    }
+    label {
+      width: 100%; /* Full width for labels */
+      margin-bottom: 5px; /* Add margin bottom for spacing */
+      text-align: left; /* Align text to the left */
+      padding-right: 0; /* Remove padding right */
+    }
+    select, input[type="text"], input[type="number"], input[type="date"] {
+      width: 100%; /* Full width on smaller screens */
+      margin-bottom: 15px; /* Add margin bottom for spacing */
+    }
+    .login-container {
+      max-width: 50%;
+      padding: 15px;
+    }
+    .form-control {
+      font-size: 18px !important;
+    }
+    .icon {
+      right: 5px; /* Adjust right position for smaller screens */
+    }
+    a {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .form-container,
+    .form-container-stock,
+    .form-container-resumen {
+      max-width: 100%;
+      padding: 20px;
+    }
+    select, input[type="text"], input[type="number"], input[type="date"] {
+      max-width: 100%;
+      margin-left: 0;
+    }
+    .logout-button {
+      right: 5px; /* Further adjust right position */
+      font-size: 8px; /* Further reduce font size */
+      width: 5rem; /* Further reduce width */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .menu-btn {
+      width: 180px;
+      padding: 12px;
+      font-size: 14px;
+    }
+    .menu-container {
+      padding: 20px;
+    }
+    .form-container input {
+      margin-left: 0 !important; /* Remove margin left */
+    }
+    .form-container label {
+      width: 100%; /* Full width for labels */
+    }
+    select {
+      margin-left: 0 !important; /* Remove margin left */
+    }
+    .content-container select {
+      margin-left: 0 !important; /* Remove margin left */
+    }
+    .content-container input {
+      margin-left: 0 !important; /* Remove margin left */
+    }
+  }
+  
